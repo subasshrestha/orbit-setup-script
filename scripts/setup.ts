@@ -127,11 +127,11 @@ async function main() {
       let depositCheckTime = 0
 
       // Waiting for 30 secs to be sure that ETH/Native token deposited is received on L3
-      // Repeatedly check the balance until it changes by 0.4 native tokens
+      // Repeatedly check the balance until it changes by 0.1 native tokens
       while (true) {
         depositCheckTime++
         const newBalance = await L3Provider.getBalance(config.chainOwner)
-        if (newBalance.sub(oldBalance).gte(ethers.utils.parseEther('0.4'))) {
+        if (newBalance.sub(oldBalance).gte(ethers.utils.parseEther('0.1'))) {
           console.log(
             'Balance of your account on Orbit chain increased by the native token you have just sent.'
           )

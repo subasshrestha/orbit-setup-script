@@ -29,6 +29,8 @@ export async function transferOwner(
   let TOKEN_BRIDGE_CREATOR
   if (l2ChainId === 421614) {
     TOKEN_BRIDGE_CREATOR = TOKEN_BRIDGE_CREATOR_Arb_Sepolia
+  } else if (l2ChainId === 84532) {
+    TOKEN_BRIDGE_CREATOR = '0xFC71d21a4FE10Cc0d34745ba9c713836f82f8DE3'
   } else {
     throw new Error(
       'The Base Chain you have provided is not supported, please put RPC for Arb Sepolia'
